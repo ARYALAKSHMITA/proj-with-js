@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Wisdom Woods</title>
+    <link rel="stylesheet" href="stylescontact.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x:auto; /*scrollable*/ 
+    background-image: url('backg7.jpg'); 
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+    </style>
+    <script>
+        function validateForm(event) {
+            // Prevent form submission
+            event.preventDefault();
+            
+            // Get form elements
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+ 
+            // Regular expression for email validation
+            const emailPattern = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+ 
+            // Check if name is empty
+            if (name.trim() === '') {
+                alert('Name is required.');
+                return false;
+            }
+ 
+            // Check if email is valid
+            if (!emailPattern.test(email)) {
+                alert('Please enter a valid email address.');
+                return false;
+            }
+ 
+            // Check if message is empty
+            if (message.trim() === '') {
+                alert('Message cannot be empty.');
+                return false;
+            }
+ 
+            // If all checks pass, submit the form
+            document.querySelector('form').submit();
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="Wisdom Woods Logo" class="logo">
+        <h1>Wisdom Woods</h1>
+    </header>
+    <nav>
+        <a href="contact.html">Contact Us</a>
+        <a href="login with js.html">Login</a>
+        <a href="about.html">About Us</a>
+        <a href="index.html">Home</a>
+    </nav>
+    <div class='overlay'></div>
+    <div class="content">
+        <h2>Contact Us</h2>
+        <p>Have a question or feedback? We'd love to hear from you! Please use the form below to get in touch with us.</p>
+        <form action="#" method="POST" onsubmit="validateForm(event)">
+            <div class="id">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+            </div>
+            <div class="id">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+            </div>
+            <div class="id">
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" rows="6" required></textarea><br><br>
+                <input type="submit" value="Submit">
+            </div>
+        </form>
+        <div class="contact-info">
+            <h3>Contact Information</h3>
+            <p><strong>Email:</strong> contact@wisdomwoods.com</p>
+            <p><strong>Phone:</strong> +1 (555) 123-4567</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Wisdom Woods. All rights reserved.</p>
+    </footer>
+</body>
+</html>
